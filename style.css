@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: "Sora", serif;
   background-color: #0d121e;
   color: white;
 }
@@ -14,7 +18,7 @@ body {
 }
 
 .title {
-  width: 280px;
+  width: 300px;
 }
 
 .highlight-font {
@@ -22,12 +26,42 @@ body {
   text-decoration: underline;
 }
 
+img {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+}
+
+.password-options {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+}
+
 #button-el {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  margin: 0;
+  padding: 0 15px;
+  font-family: "Sora", serif;
   background: #5d7dde;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
+}
+
+#optionOne-el {
+  width: 250px;
+  height: 40px;
+  margin: 0;
+  padding: 10px;
+  color: #5d7dde;
+  background: rgb(42, 43, 44);
+  border-radius: 5px 0 0 5px;
+  border-right: none;
 }
 
 #button-el:hover {
@@ -36,26 +70,7 @@ body {
 }
 
 .bottom-line {
-  width: 340px;
-  margin-top: 30px;
+  width: 300px;
+  margin: 10px 0;
   border-bottom: 2px solid rgb(42, 43, 44);
-}
-
-.password-options {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  padding: 10px 30px;
-}
-
-#optionOne-el, #optionTwo-el {
-  width: 150px;
-  height: 20px;
-  margin-top: 0;
-  margin-right: 20px;
-  padding: 5px;
-  color: #5d7dde;
-  background: rgb(42, 43, 44);
-  border-radius: 5px
 }
