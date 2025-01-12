@@ -96,6 +96,7 @@ const characters = [
   "/",
 ];
 
+
 let passwordLength = 15;
 
 function generateRandomCharacter() {
@@ -111,9 +112,10 @@ function generatePassword() {
   return randomPassword;
 }
 
-function passwordOptions() {
-  let optionOne = document.getElementById("optionOne-el");
-  let optionTwo = document.getElementById("optionTwo-el");
+let buttonEl = document.getElementById("button-el")
+let optionOne = document.getElementById("optionOne-el");
+
+buttonEl.addEventListener("click", function passwordOptions() {
   optionOne.textContent = generatePassword();
-  optionTwo.textContent = generatePassword();
-}
+})
+
