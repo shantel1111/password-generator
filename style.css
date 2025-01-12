@@ -74,3 +74,9 @@ img {
   margin: 10px 0;
   border-bottom: 2px solid rgb(42, 43, 44);
 }
+
+.passwordcustomisation-container {
+  display: grid;
+  grid-template-columns: 180px 180px;
+  row-gap: 10px;
+}

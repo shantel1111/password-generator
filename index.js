@@ -118,4 +118,3 @@ let optionOne = document.getElementById("optionOne-el");
 buttonEl.addEventListener("click", function passwordOptions() {
   optionOne.textContent = generatePassword();
 })
-
