@@ -1,7 +1,3 @@
-// 91 characters
-// generating two random passwords when user clicks the button
-// each password should be 15 characters long
-
 const characters = [
   "A",
   "B",
@@ -95,9 +91,20 @@ const characters = [
   "?",
   "/",
 ];
+// const uppercaseCharacters =
+// const lowercaseCharacters =
+// const numbers =
+// const symbols =
 
+let passwordLength = document.getElementById("password-length");
+let rangeInput = document.getElementById("range-input");
+let rangeValue = "";
 
-let passwordLength = 15;
+rangeInput.addEventListener("input", function () {
+  rangeValue = rangeInput.value;
+  passwordLength.textContent = `Password Length: ${rangeInput.value}`;
+  console.log(rangeInput.value);
+});
 
 function generateRandomCharacter() {
   let getIndex = Math.floor(Math.random() * characters.length);
@@ -106,15 +113,17 @@ function generateRandomCharacter() {
 
 function generatePassword() {
   let randomPassword = "";
-  for (let i = 0; i < passwordLength; i++) {
+  for (let i = 0; i < rangeValue; i++) {
     randomPassword += generateRandomCharacter();
   }
+  console.log(randomPassword);
   return randomPassword;
 }
 
-let buttonEl = document.getElementById("button-el")
+let buttonEl = document.getElementById("button-el");
 let optionOne = document.getElementById("optionOne-el");
 
 buttonEl.addEventListener("click", function passwordOptions() {
   optionOne.textContent = generatePassword();
-})
+});
+
