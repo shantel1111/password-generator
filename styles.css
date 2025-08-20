@@ -80,7 +80,21 @@ img {
 }
 
 .passwordcustomisation-container {
+  width: 400px;
   display: grid;
-  grid-template-columns: 180px 180px;
-  row-gap: 10px;
+  grid-template-columns: 150px 60px 60px 60px 60px;
+  gap: 5px;
+  /* border: 1px solid red; */
+}
+
+.passwordcustomisation-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.passwordlength-container {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  width: 400px;
+  margin-bottom: 1em;
 }
