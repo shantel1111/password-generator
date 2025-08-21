@@ -34,7 +34,7 @@ body {
 .title {
   /* width: 300px; */
   margin-bottom: 1rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .highlight-font {
@@ -99,6 +99,7 @@ img {
   width: 450px;
   display: grid;
   grid-template-columns: 175px 65px 65px 65px 65px;
+  /* align-content: center; */
   gap: 5px;
   /* border: 1px solid red; */
 }
@@ -129,7 +130,16 @@ img {
   appearance: none;
   height: 15px;
   width: 15px;
-  background: #5d7dde;
-  border-radius: 50%;
+  background-color: #5d7dde;
+  border-radius: 15%;
   cursor: pointer;
+}
+
+input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #5d7dde;
 }
