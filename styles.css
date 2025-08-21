@@ -32,7 +32,9 @@ body {
 }
 
 .title {
-  width: 300px;
+  /* width: 300px; */
+  margin-bottom: 1rem;
+  border: 1px solid red;
 }
 
 .highlight-font {
@@ -52,7 +54,7 @@ img {
   margin: 20px 0px;
 }
 
-#button-el {
+.button-el {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,8 +65,11 @@ img {
   font-family: "Sora", serif;
   background: #5d7dde;
   border: none;
-  border-radius: 0 5px 5px 0;
   cursor: pointer;
+}
+
+.copy {
+  border-radius: 0 5px 5px 0;
 }
 
 #optionOne-el {
@@ -79,7 +84,7 @@ img {
   border-top: 1px solid darkgray;
 }
 
-#button-el:hover {
+.button-el:hover {
   background: rgb(255, 255, 255);
   color: #5d7dde;
 }
@@ -91,9 +96,9 @@ img {
 }
 
 .passwordcustomisation-container {
-  width: 400px;
+  width: 450px;
   display: grid;
-  grid-template-columns: 150px 60px 60px 60px 60px;
+  grid-template-columns: 175px 65px 65px 65px 65px;
   gap: 5px;
   /* border: 1px solid red; */
 }
@@ -105,7 +110,26 @@ img {
 .passwordlength-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   /* border: 1px solid red; */
-  width: 400px;
+  width: 450px;
   margin-bottom: 1em;
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60%;
+  height: 5px;
+  border-radius: 2px;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  background: #5d7dde;
+  border-radius: 50%;
+  cursor: pointer;
 }

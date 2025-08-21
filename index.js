@@ -7,7 +7,7 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
 
 
-let buttonEl = document.getElementById("button-el")
+let loadEl = document.getElementById("load-el")
 let optionOne = document.getElementById("optionOne-el");
 let passwordLength = document.getElementById("password-length")
 let rangeInput = document.getElementById("range-input");
@@ -44,7 +44,7 @@ function passwordOption(){
    return optionOne.textContent = generatePassword();
 }
 
-buttonEl.addEventListener("click", passwordOption)
+loadEl.addEventListener("click", passwordOption)
 
 
 // 1. create a function that checks whether checkbox is checked and what character it uses
