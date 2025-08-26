@@ -89,10 +89,14 @@ img {
   color: #5d7dde;
 }
 
+.button-el:focus {
+  outline: none;
+}
+
 .bottom-line {
-  width: 300px;
+  width: 310px;
   margin: 10px 0;
-  border-bottom: 2px solid rgb(42, 43, 44);
+  border-bottom: 2px solid darkgrey;
 }
 
 .passwordcustomisation-container {
@@ -125,6 +129,10 @@ img {
   border-radius: 2px;
 }
 
+.range:focus, input[type="checkbox"]:focus {
+  outline: none
+}
+
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -142,4 +150,11 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
   accent-color: #5d7dde;
+}
+
+.select-message {
+  margin: 1em 0;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: red;
 }
