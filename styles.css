@@ -72,7 +72,7 @@ img {
   border-radius: 0 5px 5px 0;
 }
 
-#optionOne-el {
+#option-el {
   width: 350px;
   height: 40px;
   margin: 0;
@@ -129,8 +129,9 @@ img {
   border-radius: 2px;
 }
 
-.range:focus, input[type="checkbox"]:focus {
-  outline: none
+.range:focus,
+input[type="checkbox"]:focus {
+  outline: none;
 }
 
 .range::-webkit-slider-thumb {
