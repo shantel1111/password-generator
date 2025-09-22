@@ -7,7 +7,6 @@
 }
 
 body {
-  margin: 0;
   font-family: "Sora", serif;
   background-color: #0d121e;
   color: white;
@@ -28,7 +27,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  padding: 20px 30px;
+  padding: 20px 15px;
 }
 
 .title {

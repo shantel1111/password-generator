@@ -94,7 +94,7 @@ const passwordLength = document.getElementById("password-length");
 const rangeInput = document.getElementById("range-input");
 let currentValue = rangeInput.value;
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   optionEl.textContent = generatePassword();
 });
 
@@ -151,7 +151,7 @@ function generatePassword() {
 }
 
 function passwordOption() {
-  return (optionEl.textContent = generatePassword());
+  return optionEl.textContent = generatePassword();
 }
 
 loadEl.addEventListener("click", passwordOption);
