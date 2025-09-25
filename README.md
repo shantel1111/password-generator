@@ -39,6 +39,14 @@ Generate strong, secure passwords in seconds! This web app lets users customize 
    
 ## 📦 Installation
 ```bash
+# Clone the repo
 git clone https://github.com/shantel1111/password-generator.git
+
+# Go into the project folder
 cd password-generator
 
+# (Optional) Install dependencies if using a build tool
+npm install
+
+# (Optional) Start the project locally
+npm start
