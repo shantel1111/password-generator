@@ -191,3 +191,9 @@ input[type="checkbox"]:checked {
   border-style: solid;
   border-color: #fff transparent transparent transparent;
 }
+
+.unavailable {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+}

@@ -143,6 +143,10 @@ function generatePassword() {
     optionEl.textContent = "";
     document.getElementById("select-message").textContent =
       "ERROR: Please select at least one option.";
+    loadEl.classList.add("unavailable");
+    copyEl.classList.add("unavailable");
+    loadEl.disabled = true;
+    copyEl.disabled = true;
     return "";
   }
 
@@ -151,8 +155,22 @@ function generatePassword() {
   }
 
   document.getElementById("select-message").textContent = "";
+  loadEl.classList.remove("unavailable");
+  copyEl.classList.remove("unavailable");
+  loadEl.disabled = false;
+  copyEl.disabled = false;
   return currentPassword;
 }
+
+const checkedBox = document.querySelectorAll(
+  "#uppercase-el, #lowercase-el, #numbers-el, #symbols-el"
+);
+
+checkedBox.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    optionEl.textContent = generatePassword();
+  });
+});
 
 function passwordOption() {
   return (optionEl.textContent = generatePassword());
@@ -160,8 +178,12 @@ function passwordOption() {
 
 function copyPassword() {
   navigator.clipboard.writeText(optionEl.textContent);
-  tooltip.classList.add("show");
-  setTimeout(() => {
+  if (optionEl.textContent === "") {
     tooltip.classList.remove("show");
-  }, 2000);
+  } else {
+    tooltip.classList.add("show");
+    setTimeout(() => {
+      tooltip.classList.remove("show");
+    }, 2000);
+  }
 }
