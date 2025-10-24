@@ -11,6 +11,7 @@ Generate strong, secure passwords in seconds! This web app lets users customize 
 - 📏 Adjustable password length using a slider
 - 🎯 Instant password generation with a click
 - ⚠️ Error handling if no options are selectedf 5 matching colors with hex codes
+- 📋 “Copy to Clipboard” button for convenience
 
 ---
 
@@ -20,7 +21,7 @@ Generate strong, secure passwords in seconds! This web app lets users customize 
 
 ---
 
-## 🕹️ How to Play
+## 🕹️ How to Use
 1. Open the app in a web browser
 2. Select which character types you want in your password (uppercase, lowercase, numbers, symbols)
 3. Adjust the slider to set the password length
@@ -30,11 +31,10 @@ Generate strong, secure passwords in seconds! This web app lets users customize 
 ---
 
 ## 💡 Future Improvements
-- Add a “Copy to Clipboard” button for convenience
 - Include password strength indicator
 - Save generated passwords locally for temporary use
 - Custom themes and UI enhancements
-   
+  
 ---
    
 ## 📦 Installation
