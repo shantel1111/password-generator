@@ -10,17 +10,20 @@ body {
   font-family: "Sora", serif;
   background-color: #0d121e;
   color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* .container {
+.container {
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-  border: 1px dashed rgb(252, 0, 0);
 }
- */
 
 .passwords-container {
   display: flex;
@@ -31,9 +34,7 @@ body {
 }
 
 .title {
-  /* width: 300px; */
   margin-bottom: 1rem;
-  /* border: 1px solid red; */
 }
 
 .highlight-font {
@@ -51,6 +52,8 @@ img {
   display: flex;
   align-items: center;
   margin: 20px 0px;
+
+  position: relative;
 }
 
 .button-el {
@@ -102,9 +105,7 @@ img {
   width: 450px;
   display: grid;
   grid-template-columns: 175px 65px 65px 65px 65px;
-  /* align-content: center; */
   gap: 5px;
-  /* border: 1px solid red; */
 }
 
 .passwordcustomisation-container input[type="checkbox"] {
@@ -115,7 +116,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid red; */
   width: 450px;
   margin-bottom: 1em;
 }
@@ -157,4 +157,37 @@ input[type="checkbox"]:checked {
   font-size: 0.75em;
   font-weight: bold;
   color: red;
+}
+
+#tooltip {
+  font-size: 0.8em;
+  background-color: #fff;
+  color: #555;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  width: 100px;
+  z-index: 1;
+  opacity: 0;
+  text-align: center;
+  top: -40px;
+  right: 0;
+  visibility: hidden;
+  transition: opacity 1s;
+}
+
+#tooltip.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: 25px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
 }

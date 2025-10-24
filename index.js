@@ -89,6 +89,8 @@ const symbols = [
 ];
 
 const loadEl = document.getElementById("load-el");
+const copyEl = document.getElementById("copy-el");
+const tooltip = document.getElementById("tooltip");
 const optionEl = document.getElementById("option-el");
 const passwordLength = document.getElementById("password-length");
 const rangeInput = document.getElementById("range-input");
@@ -98,6 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
   optionEl.textContent = generatePassword();
 });
 
+loadEl.addEventListener("click", passwordOption);
+copyEl.addEventListener("click", copyPassword);
 rangeInput.addEventListener("input", generateValue);
 
 function generateValue() {
@@ -151,7 +155,13 @@ function generatePassword() {
 }
 
 function passwordOption() {
-  return optionEl.textContent = generatePassword();
+  return (optionEl.textContent = generatePassword());
 }
 
-loadEl.addEventListener("click", passwordOption);
+function copyPassword() {
+  navigator.clipboard.writeText(optionEl.textContent);
+  tooltip.classList.add("show");
+  setTimeout(() => {
+    tooltip.classList.remove("show");
+  }, 2000);
+}
