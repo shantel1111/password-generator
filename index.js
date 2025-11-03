@@ -1,4 +1,3 @@
-let customCharacters = [];
 const uppercaseCharacters = [
   "A",
   "B",
@@ -95,6 +94,8 @@ const optionEl = document.getElementById("option-el");
 const passwordLength = document.getElementById("password-length");
 const rangeInput = document.getElementById("range-input");
 let currentValue = rangeInput.value;
+let customCharacters = [];
+const starEl = document.getElementById("star-el");
 
 document.addEventListener("DOMContentLoaded", () => {
   optionEl.textContent = generatePassword();
@@ -108,6 +109,21 @@ function generateValue() {
   currentValue = rangeInput.value;
   passwordLength.textContent = `Password Length: ${rangeInput.value}`;
   optionEl.textContent = generatePassword();
+  passwordStrength();
+}
+
+function passwordStrength() {
+  if (currentValue <= 11) {
+    starEl.src = "svgs/sad-star.svg";
+  } else if (currentValue <= 15) {
+    starEl.src = "svgs/angry-star.svg";
+  } else if (currentValue <= 20) {
+    starEl.src = "svgs/happy-star.svg";
+  } else if (currentValue <= 26) {
+    starEl.src = "svgs/duck-star.svg";
+  } else {
+    starEl.src = "svgs/cute-star.svg";
+  }
 }
 
 function generateRandomCharacter() {
