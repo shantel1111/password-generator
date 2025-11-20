@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="responsive.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,47 +14,48 @@
     />
   </head>
   <body>
-    <div class="password-generator container">
+    <div class="container">
       <div class="passwords-container">
         <h1 class="title">
           generate a <span class="highlight-font">random password.</span>
         </h1>
           <p>Never use an insecure password again.</p>
-          <div class="bottom-line"></div>
         
         <div class="password-options">
-          <img id="star-el" class="password-strength" src="svgs/happy-star.svg">
-          <p id="option-el"></p>
-          <button class="button-el load" id="load-el">
+          <img id="star-icon" class="password-strength" src="svgs/happy-star.svg">
+          <p id="password-output"></p>
+          <div class="password-actions">
+            <button class="load" id="load-el">
             <img src="svgs/reload.svg" alt="reload">
           </button>
-          <button class="button-el copy" id="copy-el">
+          <button class="copy" id="copy-el">
             <img src="svgs/copy.svg">
             <span id="tooltip">copied</span>
           </button>
+          </div>
         </div>
         
-        <div class="passwordlength-container">
+        <div class="length-container">
           <label for="length" id="password-length">Password Length: 15</label>
           <input type="range" class="range" id="range-input" name="length" min="8" max="32" value="15">
         </div>
         
-        <div class="passwordcustomisation-container">
-          <div>
-            <p>Characters used: </p>
-          </div>
-          <div>
-            <label for="uppercase-el" value="uppercase"><input type="checkbox" id="uppercase-el" checked>ABC</label>
-          </div>
-          <div>
-            <label for="lowercase-el" value="lowercase"><input type="checkbox" id="lowercase-el" checked>abc</label>
-          </div>
-          <div>
-            <label for="numbers-el" value="numbers"><input type="checkbox" id="numbers-el" checked />123</label>
-          </div>
-          <div>
-            <label for="symbols-el" value="symbols"><input type="checkbox" id="symbols-el" checked >#$&</label>
-          </div>
+        <div class="customisation-container">
+          <p>Characters used: </p>
+          <div class="characters-container">
+            <div>
+              <label for="uppercase-el" value="uppercase"><input type="checkbox" id="uppercase-el" checked>ABC</label>
+            </div>
+            <div>
+              <label for="lowercase-el" value="lowercase"><input type="checkbox" id="lowercase-el" checked>abc</label>
+            </div>
+            <div>
+              <label for="numbers-el" value="numbers"><input type="checkbox" id="numbers-el" checked />123</label>
+            </div>
+            <div>
+              <label for="symbols-el" value="symbols"><input type="checkbox" id="symbols-el" checked >#$&</label>
+            </div>
+          </div>  
         </div>
         <p class="select-message" id="select-message"></p>
   </body>

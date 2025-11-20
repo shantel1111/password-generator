@@ -10,27 +10,26 @@ body {
   font-family: "Sora", serif;
   background-color: #0d121e;
   color: white;
-
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.container {
-  max-width: 1536px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.load img,
+.copy img {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.passwords-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  padding: 20px 15px;
+.container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .title {
@@ -42,90 +41,108 @@ body {
   text-decoration: underline;
 }
 
-img {
-  width: 20px;
-  height: 20px;
-  padding: 0px;
+#star-icon {
+  display: block;
+  margin: 1em auto;
+  width: 100px;
+  height: 100px;
+}
+
+.passwords-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 .password-options {
-  display: flex;
-  align-items: center;
-  margin: 20px 0px;
-
+  width: 100%;
   position: relative;
+  word-wrap: break-all;
+  overflow-wrap: break-word;
 }
 
-.button-el {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#password-output {
+  max-width: 100%;
+  margin-bottom: 0.5em;
+  padding: 10px;
+  color: #5d7dde;
+  background: rgb(42, 43, 44);
+  border-radius: 5px;
+  border-top: 1px solid darkgray;
 
-  height: 40px;
+  white-space: normal;
+  word-wrap: break-all;
+  overflow-wrap: break-word;
+}
+
+.password-actions button {
+  height: 30px;
   margin: 0;
   padding: 0 15px;
   font-family: "Sora", serif;
+  border-radius: 5px;
   background: #5d7dde;
   border: none;
   cursor: pointer;
 }
 
-.copy {
-  border-radius: 0 5px 5px 0;
-}
-
-#option-el {
-  width: 350px;
-  height: 40px;
-  margin: 0;
-  padding: 10px;
-  color: #5d7dde;
-  background: rgb(42, 43, 44);
-  border-radius: 5px 0 0 5px;
-  border-right: none;
-  border-top: 1px solid darkgray;
-}
-
-.button-el:hover {
+.password-actions button:hover {
   background: rgb(255, 255, 255);
   color: #5d7dde;
 }
 
-.button-el:focus {
+.password-actions button:focus {
   outline: none;
 }
 
-.bottom-line {
-  width: 310px;
-  margin: 10px 0;
-  border-bottom: 2px solid darkgrey;
+#tooltip {
+  font-size: 0.8em;
+  background-color: #fff;
+  color: #555;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  width: 100px;
+  z-index: 1;
+  opacity: 0;
+  text-align: center;
+  bottom: 5px;
+  left: 115px;
+  visibility: hidden;
+  transition: opacity 1s;
 }
 
-.passwordcustomisation-container {
-  width: 500px;
-  display: grid;
-  grid-template-columns: 195px 75px 75px 75px 75px;
-  gap: 5px;
+#tooltip.show {
+  visibility: visible;
+  opacity: 1;
 }
 
-.passwordcustomisation-container input[type="checkbox"] {
-  margin-right: 5px;
+#tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgb(255, 255, 255) transparent transparent;
 }
 
-.passwordlength-container {
+.length-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  width: 500px;
-  margin-bottom: 1em;
+  height: 35px;
+  margin: 1.5em 0;
 }
 
 .range {
   -webkit-appearance: none;
   appearance: none;
-  width: 60%;
   height: 5px;
   border-radius: 2px;
+  width: 100%;
 }
 
 .range:focus,
@@ -141,6 +158,17 @@ input[type="checkbox"]:focus {
   background-color: #5d7dde;
   border-radius: 15%;
   cursor: pointer;
+}
+
+.characters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5em;
+}
+
+.characters-container input[type="checkbox"] {
+  margin-right: 5px;
 }
 
 input[type="checkbox"] {
@@ -159,47 +187,8 @@ input[type="checkbox"]:checked {
   color: red;
 }
 
-#tooltip {
-  font-size: 0.8em;
-  background-color: #fff;
-  color: #555;
-  border-radius: 5px;
-  padding: 5px 0;
-  position: absolute;
-  width: 100px;
-  z-index: 1;
-  opacity: 0;
-  text-align: center;
-  top: -40px;
-  right: 0;
-  visibility: hidden;
-  transition: opacity 1s;
-}
-
-#tooltip.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-#tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: 25px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #fff transparent transparent transparent;
-}
-
 .unavailable {
   background-color: #e0e0e0;
   color: #888;
   cursor: not-allowed;
-}
-
-.password-strength {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
 }

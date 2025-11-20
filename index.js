@@ -90,15 +90,15 @@ const symbols = [
 const loadEl = document.getElementById("load-el");
 const copyEl = document.getElementById("copy-el");
 const tooltip = document.getElementById("tooltip");
-const optionEl = document.getElementById("option-el");
+const passwordOutput = document.getElementById("password-output");
 const passwordLength = document.getElementById("password-length");
 const rangeInput = document.getElementById("range-input");
 let currentValue = rangeInput.value;
 let customCharacters = [];
-const starEl = document.getElementById("star-el");
+const starIcon = document.getElementById("star-icon");
 
 document.addEventListener("DOMContentLoaded", () => {
-  optionEl.textContent = generatePassword();
+  passwordOutput.textContent = generatePassword();
 });
 
 loadEl.addEventListener("click", passwordOption);
@@ -108,21 +108,21 @@ rangeInput.addEventListener("input", generateValue);
 function generateValue() {
   currentValue = rangeInput.value;
   passwordLength.textContent = `Password Length: ${rangeInput.value}`;
-  optionEl.textContent = generatePassword();
+  passwordOutput.textContent = generatePassword();
   passwordStrength();
 }
 
 function passwordStrength() {
   if (currentValue <= 11) {
-    starEl.src = "svgs/sad-star.svg";
+    starIcon.src = "svgs/sad-star.svg";
   } else if (currentValue <= 15) {
-    starEl.src = "svgs/angry-star.svg";
+    starIcon.src = "svgs/angry-star.svg";
   } else if (currentValue <= 20) {
-    starEl.src = "svgs/happy-star.svg";
+    starIcon.src = "svgs/happy-star.svg";
   } else if (currentValue <= 26) {
-    starEl.src = "svgs/duck-star.svg";
+    starIcon.src = "svgs/duck-star.svg";
   } else {
-    starEl.src = "svgs/cute-star.svg";
+    starIcon.src = "svgs/cute-star.svg";
   }
 }
 
@@ -156,7 +156,7 @@ function generatePassword() {
   }
 
   if (customCharacters.length === 0) {
-    optionEl.textContent = "";
+    passwordOutput.textContent = "";
     document.getElementById("select-message").textContent =
       "ERROR: Please select at least one option.";
     loadEl.classList.add("unavailable");
@@ -184,17 +184,17 @@ const checkedBox = document.querySelectorAll(
 
 checkedBox.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
-    optionEl.textContent = generatePassword();
+    passwordOutput.textContent = generatePassword();
   });
 });
 
 function passwordOption() {
-  return (optionEl.textContent = generatePassword());
+  return (passwordOutput.textContent = generatePassword());
 }
 
 function copyPassword() {
-  navigator.clipboard.writeText(optionEl.textContent);
-  if (optionEl.textContent === "") {
+  navigator.clipboard.writeText(passwordOutput.textContent);
+  if (passwordOutput.textContent === "") {
     tooltip.classList.remove("show");
   } else {
     tooltip.classList.add("show");
