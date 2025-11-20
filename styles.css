@@ -63,6 +63,7 @@ body {
 }
 
 #password-output {
+  min-height: 40px;
   max-width: 100%;
   margin-bottom: 0.5em;
   padding: 10px;
@@ -94,6 +95,12 @@ body {
 
 .password-actions button:focus {
   outline: none;
+}
+
+.password-actions button.unavailable {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
 }
 
 #tooltip {
@@ -181,14 +188,9 @@ input[type="checkbox"]:checked {
 }
 
 .select-message {
+  min-height: 1.2em;
   margin: 1em 0;
   font-size: 0.75em;
   font-weight: bold;
   color: red;
-}
-
-.unavailable {
-  background-color: #e0e0e0;
-  color: #888;
-  cursor: not-allowed;
 }
