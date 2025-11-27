@@ -10,7 +10,7 @@ Generate strong, secure passwords in seconds! This web app lets users customize 
 - 🔣 Include symbols
 - 📏 Adjustable password length using a slider and strength indicator
 - 🎯 Instant password generation with a click
-- ⚠️ Error handling if no options are selectedf 5 matching colors with hex codes
+- ⚠️ Error handling if no options are selected
 - 📋 “Copy to Clipboard” button for convenience
 
 ---
